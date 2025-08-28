@@ -1,0 +1,27 @@
+
+Bike Rentals Forecasting — Summary Report
+--------------------------------------------------
+Task 1 (Feature Engineering): 
+- Numeric features: ['hour', 'temperaturec', 'humidity', 'wind_speed_m_s', 'visibility_10m', 'dew_point_temperaturec', 'solar_radiation_mj_m2', 'rainfallmm', 'snowfall_cm', 'holiday', 'functioning_day', 'year', 'month', 'day', 'dayofweek', 'is_weekend']
+- Categorical features (one-hot encoded): ['seasons']
+- Scaling applied via StandardScaler inside modeling pipelines (no leakage).
+- Encoded features saved to 'bike_rental_features.csv'.
+Task 2 (Models without polynomial): 
+  * Linear: MAE=330.303, MSE=192180.471, Rsquared=0.5387
+  * Ridge: MAE=330.244, MSE=192144.978, Rsquared=0.5388
+  * Lasso: MAE=330.295, MSE=192176.135, Rsquared=0.5388
+  * ElasticNet: MAE=330.113, MSE=192067.817, Rsquared=0.5390
+
+Task 3 (Polynomial features):   * Linear_poly: MAE=263.706, MSE=136932.581, Rsquared=0.6713  * Ridge_poly: MAE=264.410, MSE=137187.998, Rsquared=0.6707  * Lasso_poly: MAE=266.880, MSE=139832.398, Rsquared=0.6644  * ElasticNet_poly: MAE=292.806, MSE=167843.358, Rsquared=0.5972
+
+- Best polynomial model: Linear_poly
+Task 4 (Validation): 
+- 5-fold CV used on train splits to assess generalization.
+
+- Compared test metrics across all models (linear vs polynomial).
+Task 5 (Insights & Recommendations): 
+- Temperature, hour, humidity, and seasonal effects typically correlate with demand.
+- Polynomial models often capture non-linear relationships (e.g., temperature vs. demand).
+- For the business: consider dynamic pricing & staffing by hour/season/weather signals.
+- Further improvements: add lag features (previous hour/day), holiday calendars, weather forecasts,
+interaction terms (e.g., temperature × hour), and try tree-based models (Random Forest, XGBoost).
