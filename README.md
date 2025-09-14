@@ -4,6 +4,6 @@ This project extends prior work in data preparation and visualization to build a
 
 The outputs are as follows:
 - Encoded dataset: bike_rental_features.csv
-- Best polynomial model: Unit 3 Capstone Outputs/best_poly_model.pkl
-- Correlation heatmap: Unit 3 Capstone Outputs/correlation_heatmap.png
-- Report: Unit 3 Capstone Outputs/report.txt
+- Best polynomial model: best_poly_model.pkl
+- Correlation heatmap: correlation_heatmap.png
+- Report: report.txt
